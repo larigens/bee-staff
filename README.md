@@ -1,26 +1,31 @@
 
-<h1 align="center"> Honey Bee </h1>
+<h1 align="center"> Staff Bee </h1>
 
 <p align="center">
-    <img src="./dist/assets/favicon/apple-touch-icon.png" alt="logo" width="120px" height="120px" />
-  <br>
+    <img src="./assets/favicon/apple-touch-icon.png" alt="logo" width="125px" height="125px" />
+  <br><br>
   <i> Employee Tracker
     <br> built using Node.js and MySQL</i>
   <br>
 </p>
 <br>
 
-![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-lightgrey.svg)
-![Contributors](https://img.shields.io/github/contributors/larigens/team-up?style=plastic&color=lightgrey)
-![Forks](https://img.shields.io/github/forks/larigens/team-up?style=plastic&color=lightgrey)
-![Stars](https://img.shields.io/github/stars/larigens/team-up?style=plastic&color=lightgrey)
-![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=lightgrey)
-![Issues](https://img.shields.io/github/issues/larigens/team-up?style=plastic&color=lightgrey)
+<div align="center">
+
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-yellow.svg)
+![Contributors](https://img.shields.io/github/contributors/larigens/team-up?style=plastic&color=yellow)
+![Forks](https://img.shields.io/github/forks/larigens/team-up?style=plastic&color=yellow)
+![Stars](https://img.shields.io/github/stars/larigens/team-up?style=plastic&color=yellow)
+![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=yellow)
+![Issues](https://img.shields.io/github/issues/larigens/team-up?style=plastic&color=yellow)
+
+</div>
 
 ---
 ## Description
 
-App that can organize and plan your business
+Staff Bee is a content management system (CMS) that can help you organize and plan your business more efficiently, allowing you to view and manage the company's departments, roles, and employees in the company according to your needs.
+
 
 ## Table of Contents
 - [Description](#description)
@@ -31,9 +36,6 @@ App that can organize and plan your business
   - [Setting Up](#setting-up)
 - [Mock-Up](#mock-up)
 - [Usage](#usage)
-- [Tests](#tests)
-  - [Prerequisites](#prerequisites-1)
-  - [Running Tests](#running-tests)
 - [Questions](#questions)
 - [Contributing](#contributing)
   - [Contributing Guidelines](#contributing-guidelines)
@@ -57,26 +59,63 @@ I would recommend downloading [Visual Studio Code](https://code.visualstudio.com
 
 ### Prerequisites
 
-This package requires you to have [Node.js](https://nodejs.org/en/download/), npm and Inquirer installed on your machine. You can install `npm` by running the code below on your terminal:
+This package requires you to have [Node.js](https://nodejs.org/en/download/), npm, Inquirer, [Express.js](https://expressjs.com/) and [MySQL2](https://www.npmjs.com/package/mysql2) installed on your machine. You can install these by running the code below on your terminal:
+
+For `npm`
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
+
+For `Node.js`
+
+```bash
+npm i node@lts
+```
+
+For `Express.js`
+
+```bash
+npm i express
+```
+
 ### Setting Up
 
-Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`. To install it, type the command below on your terminal:
+Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`, `MySQL2` and `Console Table Package`. To install it, type the commands below on your terminal:
 
+For `Inquirer`
 ```bash
 npm install --save inquirer@^8.2.5
 ```
 
+For `MySQL2`
+```bash
+npm i mysql2
+```
+
+For `Console Table Package`
+```bash
+npm i console.table
+```
+
 **Note: Be sure to download this version, because newer versions no longer use the commonjs syntax require('inquirer').**
+
+You can also open the project in VS Code and make sure you are in the directory of this application and then type the command below on your terminal:
+
+```bash
+npm i
+```
+
+Once you run this, npm will begin the installation process of all of the current project's dependencies.
 
 ## Mock-Up
 
-The following image shows the web application's appearance:
+The following images shows the web application's appearance:
 
-<img src="./dist/assets/images/demo.png" alt="App Screenshot" width="700px" height="342px" />
+<img src="./assets/images/demo1.png" alt="App Screenshot" width="700px" height="342px" />
+<img src="./assets/images/demo2.png" alt="App Screenshot" width="700px" height="342px" />
+
+<br>
 
 ## Usage
 
@@ -86,39 +125,41 @@ Launch the application by entering the command below on your terminal:
 npm start
 ```
 
+GIVEN a command-line application that accepts user input
 
+WHEN I start the application
+
+THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
+
+WHEN I choose to view all departments
+
+THEN I am presented with a formatted table showing department names and department ids
+
+WHEN I choose to view all roles
+
+THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
+
+WHEN I choose to view all employees
+
+THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
+
+WHEN I choose to add a department
+
+THEN I am prompted to enter the name of the department and that department is added to the database
+
+WHEN I choose to add a role
+
+THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
+
+WHEN I choose to add an employee
+
+THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
+
+WHEN I choose to update an employee role
+
+THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 
 If you need more guidance on how to use Team-Up, click [here]() for the tutorial!
-
-## Tests
-
-### Prerequisites
-
-To test this application, you will need to install [Jest](https://www.npmjs.com/package/jest).
-
-```bash
-npm i jest
-```
-
-Then, add Jest as a dev dependency to the project by running:
-
-```bash
-npm install --save-dev jest
-```
-
-### Running Tests
-
-Open your terminal, make sure you are in the directory of this application and type the command below:
-
-```bash
-npm run test
-```
-
-You should see a result like the following:
-
-<img src="./dist/assets/images/test-demo.png" alt="Test Screenshot" width="250px" height="160px" />
-
-All tests passed, and all four Test Suites ran without errors.
 
 ## Questions
 
@@ -147,7 +188,10 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 - [Inquirer](https://www.npmjs.com/package/inquirer)
 - [PaksTech](https://pakstech.com/blog/inquirer-js/)
 - [README Lab](https://github.com/larigens/readme-lab)
-- [Jest](https://www.npmjs.com/package/jest)
+- [Express.js](https://expressjs.com/en/4x/api.html)
+- [MySQL](https://dev.mysql.com/doc/)
+- [MySQL2](https://www.npmjs.com/package/mysql2)
+- [Console Table Package](https://www.npmjs.com/package/console.table)
 
 ### Links
 
