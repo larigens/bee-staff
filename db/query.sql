@@ -1,15 +1,20 @@
+-- View all departments
+SELECT *
+FROM department
+
+-- View all roles
 SELECT *
 FROM roles
-JOIN departments ON roles.role_department = departments.department_name;
+
+-- View all employees
+SELECT *
+FROM employee
 
 SELECT *
-FROM employees
-JOIN departments ON employees.employee_department = departments.department_name;
+FROM role
+JOIN department ON roles.department_id = department.id;
 
 SELECT *
-FROM employees
-JOIN roles ON employees.employee_salary = roles.salary;
+FROM employee
+JOIN role ON employee.role_id = roles.title;
 
-SELECT *
-FROM employees
-JOIN roles ON employees.job_title = roles.role_title;

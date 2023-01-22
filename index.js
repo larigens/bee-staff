@@ -1,6 +1,8 @@
 // Packages needed.
 const inquirer = require('inquirer');
 
+const server = require('./server');
+
 
 // Array of prompts to get user's input.
 const questions = [
@@ -196,10 +198,21 @@ const init = () => {
             let viewDepartments = answers.start === "View all departments";
             let viewRoles = answers.start === "View all roles";
             let viewEmployees = answers.start === "View all employees";
-            
             // Object destructuring assignment
             var { department, role, salary, roleDepartment, employeeFirstName, employeeLastName, employeeRole, manager, getFirstName, getLastName, updateRole } = answers
 
+            if (viewDepartments) {
+                server.getDepartments();
+            }
+            else if (viewRoles) {
+                server.getRoles();
+            }
+            else if (viewEmployees) {
+                server.getEmployees();
+            }
+            else if (department !== "") {
+
+            }
 
         })
         .catch(err => {
