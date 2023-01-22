@@ -1,0 +1,36 @@
+{
+  "name": "staff-bee",
+  "version": "1.0.0",
+  "description": "Employee Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larigens/staff-bee.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "expressjs",
+    "npm",
+    "mysql",
+    "mysql2",
+    "inquirer"
+  ],
+  "author": "Larissa Guilherme",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/larigens/staff-bee/issues"
+  },
+  "homepage": "https://github.com/larigens/staff-bee#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "express": "^4.18.2",
+    "inquirer": "^8.2.5",
+    "mysql2": "^3.0.1",
+    "node": "^16.13.2"
+  }
+}

@@ -115,8 +115,6 @@ The following images shows the web application's appearance:
 <img src="./assets/images/demo1.png" alt="App Screenshot" width="700px" height="342px" />
 <img src="./assets/images/demo2.png" alt="App Screenshot" width="700px" height="342px" />
 
-<br>
-
 ## Usage
 
 Launch the application by entering the command below on your terminal:
