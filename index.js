@@ -1,8 +1,6 @@
 // Packages needed.
 const inquirer = require('inquirer');
-
-const server = require('./server');
-
+const queryDb = require('./queryDb');
 
 // Array of prompts to get user's input.
 const questions = [
@@ -17,7 +15,7 @@ const questions = [
         message: "Please enter the department's name: ",
         name: "department",
         when(answers) {
-            return answers.start === "Add a department"
+            return answers.start === "Add a department";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -33,7 +31,7 @@ const questions = [
         message: "Please enter the role: ",
         name: "role",
         when(answers) {
-            return answers.start === "Add a role"
+            return answers.start === "Add a role";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -49,7 +47,7 @@ const questions = [
         message: "Please enter the role's salary: ",
         name: "salary",
         when(answers) {
-            return answers.role !== ""
+            return answers.start === "Add a role" && answers.role !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -65,7 +63,7 @@ const questions = [
         message: "Please enter the role's department: ",
         name: "roleDepartment",
         when(answers) {
-            return answers.salary !== ""
+            return answers.start === "Add a role" && answers.salary !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -81,7 +79,7 @@ const questions = [
         message: "Please enter the employee's first name: ",
         name: "employeeFirstName",
         when(answers) {
-            return answers.start === "Add a employee"
+            return answers.start === "Add a employee";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -97,7 +95,7 @@ const questions = [
         message: "Please enter the employee's last name: ",
         name: "employeeLastName",
         when(answers) {
-            return answers.employeeFirstName !== ""
+            return answers.start === "Add a employee" && answers.employeeFirstName !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -113,7 +111,7 @@ const questions = [
         message: "Please enter the employee's role: ",
         name: "employeeRole",
         when(answers) {
-            return answers.employeeLastName !== ""
+            return answers.start === "Add a employee" && answers.employeeLastName !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -129,7 +127,7 @@ const questions = [
         message: "Please enter the employee's manager: ",
         name: "manager",
         when(answers) {
-            return answers.employeeRole !== ""
+            return answers.start === "Add a employee" && answers.employeeRole !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -145,7 +143,7 @@ const questions = [
         message: "Please enter the first name of the employee you would like to update their role: ",
         name: "getFirstName",
         when(answers) {
-            return answers.start === "Update an employee role"
+            return answers.start === "Update an employee role";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -161,7 +159,7 @@ const questions = [
         message: "Please enter the last name of the employee you would like to update their role: ",
         name: "getLastName",
         when(answers) {
-            return answers.getFirstName !== ""
+            return answers.start === "Update an employee role" && answers.getFirstName !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -177,7 +175,7 @@ const questions = [
         message: "Please enter the employee's new role: ",
         name: "updateRole",
         when(answers) {
-            return answers.getLastName !== ""
+            return answers.start === "Update an employee role" && answers.getLastName !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -202,16 +200,25 @@ const init = () => {
             var { department, role, salary, roleDepartment, employeeFirstName, employeeLastName, employeeRole, manager, getFirstName, getLastName, updateRole } = answers
 
             if (viewDepartments) {
-                server.getDepartments();
+                // Displays the table and re-invoke prompts
+                queryDb.getDepartments();
+                more();
             }
             else if (viewRoles) {
-                server.getRoles();
+                queryDb.getRoles();
+                more();
             }
             else if (viewEmployees) {
-                server.getEmployees();
+                queryDb.getEmployees();
+                more();
             }
-            else if (department !== "") {
-
+            else if (department !== undefined) {
+                queryDb.addDepartment(department);
+                more();
+            }
+            else if (role !== undefined) {
+                queryDb.findDepartment(roleDepartment);
+                more();
             }
 
         })
@@ -220,4 +227,24 @@ const init = () => {
         })
 }
 
-init()
+const more = () => {
+    inquirer
+        .prompt({
+            type: "confirm",
+            message: "Would you like to return to the main menu?",
+            name: "more"
+        })
+        .then((answer) => {
+            if (answer.more) {
+                init();
+            }
+            else {
+                console.log(answer)
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
+
+module.exports = { init }
