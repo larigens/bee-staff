@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const queryDb = require('./queryDb');
 
 // Array of prompts to get user's input.
-const questions = [
+const mainMenu = [
     {
         type: "list",
         message: "Please select one of the following options: ",
@@ -75,11 +75,27 @@ const questions = [
         }
     },
     {
+        type: "number",
+        message: "Please enter the employee's ID: ",
+        name: "employeeId",
+        when(answers) {
+            return answers.start === "Add an employee";
+        },
+        validate: answers => {
+            if (!answers) {
+                return "Please enter the employee's ID!";
+            }
+            else {
+                return true;
+            }
+        }
+    },
+    {
         type: "input",
         message: "Please enter the employee's first name: ",
         name: "employeeFirstName",
         when(answers) {
-            return answers.start === "Add a employee";
+            return answers.start === "Add an employee" && answers.employeeId !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -95,7 +111,7 @@ const questions = [
         message: "Please enter the employee's last name: ",
         name: "employeeLastName",
         when(answers) {
-            return answers.start === "Add a employee" && answers.employeeFirstName !== "";
+            return answers.start === "Add an employee" && answers.employeeFirstName !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -111,7 +127,7 @@ const questions = [
         message: "Please enter the employee's role: ",
         name: "employeeRole",
         when(answers) {
-            return answers.start === "Add a employee" && answers.employeeLastName !== "";
+            return answers.start === "Add an employee" && answers.employeeLastName !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -124,10 +140,10 @@ const questions = [
     },
     {
         type: "input",
-        message: "Please enter the employee's manager: ",
+        message: "Please enter the employee's manager (FirstName LastName): ",
         name: "manager",
         when(answers) {
-            return answers.start === "Add a employee" && answers.employeeRole !== "";
+            return answers.start === "Add an employee" && answers.employeeRole !== "";
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -191,51 +207,50 @@ const questions = [
 // Function call to initialize app.
 const init = () => {
     inquirer
-        .prompt(questions)
+        .prompt(mainMenu)
         .then((answers) => {
             let viewDepartments = answers.start === "View all departments";
             let viewRoles = answers.start === "View all roles";
             let viewEmployees = answers.start === "View all employees";
             // Object destructuring assignment
-            var { department, role, salary, roleDepartment, employeeFirstName, employeeLastName, employeeRole, manager, getFirstName, getLastName, updateRole } = answers
+            var { department, role, salary, roleDepartment, employeeId, employeeFirstName, employeeLastName, employeeRole, manager, getFirstName, getLastName, updateRole } = answers
 
             if (viewDepartments) {
-                // Displays the table and re-invoke prompts
                 queryDb.getDepartments();
-                more();
             }
             else if (viewRoles) {
                 queryDb.getRoles();
-                more();
             }
             else if (viewEmployees) {
                 queryDb.getEmployees();
-                more();
             }
             else if (department !== undefined) {
                 queryDb.addDepartment(department);
-                more();
             }
             else if (role !== undefined) {
                 queryDb.findDepartment(role, salary, roleDepartment);
-                more();
             }
-
+            else if (employeeFirstName !== undefined) {
+                queryDb.findRole(employeeId, employeeFirstName, employeeLastName, employeeRole, manager);
+            }
+            else if (updateRole !== undefined) {
+                queryDb.findNewRole(getFirstName, getLastName, updateRole);
+            }
         })
         .catch(err => {
             console.log(err);
         })
 }
 
-const more = () => {
+const returnToMenu = () => {
     inquirer
         .prompt({
             type: "confirm",
             message: "Would you like to return to the main menu?",
-            name: "more"
+            name: "return"
         })
         .then((answer) => {
-            if (answer.more) {
+            if (answer.return) {
                 init();
             }
             else {
@@ -247,4 +262,4 @@ const more = () => {
         })
 }
 
-module.exports = { init }
+module.exports = { init, returnToMenu }
