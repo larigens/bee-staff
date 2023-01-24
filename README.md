@@ -1,5 +1,5 @@
 
-<h1 align="center"> Staff Bee </h1>
+<h1 align="center"> Bee Staff </h1>
 
 <p align="center">
     <img src="./assets/favicon/apple-touch-icon.png" alt="logo" width="125px" height="125px" />
@@ -24,7 +24,7 @@
 ---
 ## Description
 
-Staff Bee is a content management system (CMS) that can help you organize and plan your business more efficiently, allowing you to view and manage the company's departments, roles, and employees in the company according to your needs.
+Bee Staff is a content management system (CMS) that can help you organize and plan your business more efficiently, allowing you to view and manage the company's departments, roles, and employees in the company according to your needs.
 
 
 ## Table of Contents

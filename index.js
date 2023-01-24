@@ -217,7 +217,7 @@ const init = () => {
                 more();
             }
             else if (role !== undefined) {
-                queryDb.findDepartment(roleDepartment);
+                queryDb.findDepartment(role, salary, roleDepartment);
                 more();
             }
 

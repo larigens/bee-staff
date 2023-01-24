@@ -2,7 +2,7 @@
 const mysql = require('mysql2');
 const cTable = require('console.table');
 
-// Creates the connection pool. 
+// Creates the connection pool to be able to query the db.
 const pool = mysql.createPool({
     host: 'localhost',
     port: 3306,
@@ -45,13 +45,16 @@ const findDepartment = (roleDepartment) => {
             console.log(err)
         }
         else {
+            var departmentId = data;
+            addRole (role, title, salary, departmentId)
             console.table('\n\n Requested Data', data) 
+            
             // var departmentId = row['id'];
             // console.log(departmentId);
         }
     });
-
 }
+
 
 // const addRole = (role, salary) => {
 //     pool.query('INSERT into roles (title, salary) VALUES (?);', department, (err, data) => {

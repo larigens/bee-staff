@@ -30,8 +30,8 @@ CREATE TABLE roles (
 );
 -- Creates the table "employee" within corporation_db
 CREATE TABLE employee (
-    -- Creates a numeric column called "id" which cannot contain null and it auto increments.
-    id INT NOT NULL AUTO_INCREMENT,
+    -- Creates a numeric column called "id" which cannot contain null.
+    id INT NOT NULL,
     -- Makes a string column called "first_name " which cannot contain null.
     first_name VARCHAR(30) NOT NULL,
     -- Makes a string column called "last_name" which cannot contain null.
