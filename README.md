@@ -13,11 +13,11 @@
 <div align="center">
 
 ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-yellow.svg)
-![Contributors](https://img.shields.io/github/contributors/larigens/team-up?style=plastic&color=yellow)
-![Forks](https://img.shields.io/github/forks/larigens/team-up?style=plastic&color=yellow)
-![Stars](https://img.shields.io/github/stars/larigens/team-up?style=plastic&color=yellow)
+![Contributors](https://img.shields.io/github/contributors/larigens/bee-staff?style=plastic&color=yellow)
+![Forks](https://img.shields.io/github/forks/larigens/bee-staff?style=plastic&color=yellow)
+![Stars](https://img.shields.io/github/stars/larigens/bee-staff?style=plastic&color=yellow)
 ![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=yellow)
-![Issues](https://img.shields.io/github/issues/larigens/team-up?style=plastic&color=yellow)
+![Issues](https://img.shields.io/github/issues/larigens/bee-staff?style=plastic&color=yellow)
 
 </div>
 
