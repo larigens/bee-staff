@@ -17,7 +17,7 @@ app.use((req, res) => {
 
 // Connects the database
 database.connect(err => {
-    err ? console.error(err) : console.log('\n Welcome to Bee Staff! -------- 🐝🍯 -------- \n\n')
+    err ? console.error(err) : console.log('\n -------- 🐝🍯 Welcome to Bee Staff! 🐝🍯 -------- \n')
     // Initialize Inquirer.
     init();
 });
