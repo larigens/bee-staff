@@ -31,7 +31,7 @@ CREATE TABLE roles (
 -- Creates the table "employee" within corporation_db
 CREATE TABLE employee (
     -- Creates a numeric column called "id" which cannot contain null.
-    id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
     -- Makes a string column called "first_name " which cannot contain null.
     first_name VARCHAR(30) NOT NULL,
     -- Makes a string column called "last_name" which cannot contain null.
@@ -40,6 +40,8 @@ CREATE TABLE employee (
     role_id INT,
     -- Makes a numeric column called "manager_id" which holds reference to another employee that is the manager of the current employee.
     manager_id INT,
+    -- It uniquely identifies a record in the relational database table.
+    PRIMARY KEY (id),
     -- Provides a link between the tables employee and roles.
     FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE
     SET NULL
