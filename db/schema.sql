@@ -24,8 +24,8 @@ CREATE TABLE roles (
     department_id INT,
     -- It uniquely identifies a record in the relational database table.
     PRIMARY KEY (id),
-    -- Provides a link between the tables roles and deparment.
-    FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE
+    -- Provides a link between the tables employee and roles / Constraint is being used to prevent actions that could destroy links between tables.
+    CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE
     SET NULL
 );
 -- Creates the table "employee" within corporation_db
@@ -42,7 +42,7 @@ CREATE TABLE employee (
     manager_id INT,
     -- It uniquely identifies a record in the relational database table.
     PRIMARY KEY (id),
-    -- Provides a link between the tables employee and roles.
-    FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE
+    -- Provides a link between the tables employee and roles / Constraint is being used to prevent actions that could destroy links between tables.
+    CONSTRAINT fk_roles FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE
     SET NULL
 );
