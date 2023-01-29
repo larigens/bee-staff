@@ -17,12 +17,12 @@ app.use((req, res) => {
 
 // Connects the database
 database.connect(err => {
-    err ? console.error(err) : console.log('\n -------- 🐝🍯 Welcome to Bee Staff! 🐝🍯 -------- \n')
+    err ? console.error(err) : console.log('\n ------------ 🐝🍯 Welcome to Bee Staff! 🐝🍯 ------------ \n')
     // Initialize Inquirer.
     init();
 });
 
 // Listens the PORT and starts node.
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT} 🐝`);
 });
