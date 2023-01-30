@@ -148,7 +148,7 @@ Once the application is launched, the main menu will appear so that the user can
 
 The app will receive the request, process the response, demonstrate the resolution for 1 second, and then display the main menu again.
 
-If you need more guidance on how to use Bee Staff, click [here](https://drive.google.com/file/d/1aiaZmMR_TSPpIeG2L0_GRiJnVM3NaBYW/view) for the tutorial!
+If you need more guidance on how to use Bee Staff, click [here](https://drive.google.com/file/d/19gBiykYwXpXNPDtjVyTVvXFXYF8rPXmo/view) for the tutorial!
 
 ## Questions
 
