@@ -1,4 +1,3 @@
-
 <h1 align="center"> Bee Staff </h1>
 
 <p align="center">
@@ -22,11 +21,13 @@
 </div>
 
 ---
+
 ## Description
 
 Bee Staff is a content management system (CMS) that can help you organize and plan your business more efficiently, allowing you to view and manage the company's departments, roles, and employees in the company according to your needs.
 
 ## Table of Contents
+
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
@@ -83,16 +84,19 @@ npm i express
 Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`, `MySQL2` and `Console Table Package`. To install it, type the commands below on your terminal:
 
 For `Inquirer`
+
 ```bash
 npm install --save inquirer@^8.2.5
 ```
 
 For `MySQL2`
+
 ```bash
 npm i mysql2
 ```
 
 For `Console Table Package`
+
 ```bash
 npm i console.table
 ```
@@ -121,7 +125,7 @@ Launch the application by entering the command below on your terminal:
 npm start
 ```
 
-Once the application is launched, the main menu will appear so that the user can select the request. The option's are: 
+Once the application is launched, the main menu will appear so that the user can select the request. The option's are:
 
 | Request                                            | Response                                                                                            | Purpose |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- |
@@ -143,17 +147,18 @@ Once the application is launched, the main menu will appear so that the user can
 
 The app will receive the request, process the response, demonstrate the resolution for 1 second, and then display the main menu again.
 
-If you need more guidance on how to use Bee Staff, click [here]() for the tutorial!
+If you need more guidance on how to use Bee Staff, click [here](https://drive.google.com/file/d/1aiaZmMR_TSPpIeG2L0_GRiJnVM3NaBYW/view) for the tutorial!
 
 ## Questions
 
 For questions and support feel free to contact me via:
 
-<a href="mailto:larigens@gmail.com">📧 Email </a> 
+<a href="mailto:larigens@gmail.com">📧 Email </a>
 
 <a href="https://github.com/larigens">🐈‍⬛ GitHub </a>
 
 ## Contributing
+
 ### Contributing Guidelines
 
 Want to report a bug, contribute some code, request a new feature, or improve the documentation? You can submit an issue and I will gladly welcome you as a contributor, but before submitting an issue, please search the issue tracker, as it may already exist!
@@ -163,6 +168,7 @@ Want to report a bug, contribute some code, request a new feature, or improve th
 Our Code of Conduct follows the same principles as the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/), version 2.1.
 
 ## Credits
+
 ### Acknowledgements
 
 - [W3 Schools](https://www.w3schools.com)
