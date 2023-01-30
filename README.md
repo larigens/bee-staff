@@ -2,7 +2,7 @@
 <h1 align="center"> Bee Staff </h1>
 
 <p align="center">
-    <img src="./assets/favicon/apple-touch-icon.png" alt="logo" width="125px" height="125px" />
+    <img src="./assets/images/apple-touch-icon.png" alt="logo" width="125px" height="125px" />
   <br><br>
   <i> Employee Tracker
     <br> built using Node.js and MySQL</i>
@@ -25,7 +25,6 @@
 ## Description
 
 Bee Staff is a content management system (CMS) that can help you organize and plan your business more efficiently, allowing you to view and manage the company's departments, roles, and employees in the company according to your needs.
-
 
 ## Table of Contents
 - [Description](#description)
@@ -110,10 +109,9 @@ Once you run this, npm will begin the installation process of all of the current
 
 ## Mock-Up
 
-The following images shows the web application's appearance:
+The following image is an illustration of the schema of the existing tables in the database of this application:
 
 <img src="./assets/images/demo1.png" alt="App Screenshot" width="700px" height="342px" />
-<img src="./assets/images/demo2.png" alt="App Screenshot" width="700px" height="342px" />
 
 ## Usage
 
@@ -123,41 +121,29 @@ Launch the application by entering the command below on your terminal:
 npm start
 ```
 
-GIVEN a command-line application that accepts user input
+Once the application is launched, the main menu will appear so that the user can select the request. The option's are: 
 
-WHEN I start the application
+| Request                                            | Response                                                                                            | Purpose |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- |
+| **View all departments**                           | Displays the Department IDs and Department Names                                                    | View    |
+| **View the total utilized budget of a department** | Displays the Department Name and Total Utilized Budget                                              | View    |
+| **View all roles**                                 | Displays the Roles IDs, Job title, Roles Salary and Roles Department                                | View    |
+| **View roles by department**                       | Displays the Same as above, but sorted by Department                                                | View    |
+| **View all employees**                             | Displays the Employee IDs, First Names, Last Names, Job Titles, Departments, Salaries, and Managers | View    |
+| **View employees by manager**                      | Displays the Same as above, but sorted by Manager                                                   | View    |
+| **View employees by department**                   | Displays the Same as above, but sorted by Department                                                | View    |
+| **Add a department**                               | Prompted to enter the Name of the new Department                                                    | Add     |
+| **Add a role**                                     | Prompted to enter the Name, Salary, and Department for the Role                                     | Add     |
+| **Add an employee**                                | Prompted to enter the Employee’s First Name, Last Name, Role, and Manager                           | Add     |
+| **Update an employee role**                        | Prompted to select an Employee to update their new Role                                             | Update  |
+| **Update an employee manager**                     | Prompted to select an Employee to update their new Manager                                          | Update  |
+| **Delete a department**                            | Prompted to select a Department they want to remove from the database                               | Delete  |
+| **Delete a role**                                  | Prompted to select a Role they want to remove from the database                                     | Delete  |
+| **Delete an employee**                             | Prompted to select an Employee they want to remove from the database                                | Delete  |
 
-THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
+The app will receive the request, process the response, demonstrate the resolution for 1 second, and then display the main menu again.
 
-WHEN I choose to view all departments
-
-THEN I am presented with a formatted table showing department names and department ids
-
-WHEN I choose to view all roles
-
-THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
-
-WHEN I choose to view all employees
-
-THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
-
-WHEN I choose to add a department
-
-THEN I am prompted to enter the name of the department and that department is added to the database
-
-WHEN I choose to add a role
-
-THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
-
-WHEN I choose to add an employee
-
-THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
-
-WHEN I choose to update an employee role
-
-THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
-
-If you need more guidance on how to use Team-Up, click [here]() for the tutorial!
+If you need more guidance on how to use Bee Staff, click [here]() for the tutorial!
 
 ## Questions
 
@@ -190,6 +176,7 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 - [MySQL](https://dev.mysql.com/doc/)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [Console Table Package](https://www.npmjs.com/package/console.table)
+- [Stack Overflow](https://stackoverflow.com/)
 
 ### Links
 
