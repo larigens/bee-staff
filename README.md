@@ -102,7 +102,7 @@ npm i console.table
 
 **Note: Be sure to download this version, because newer versions no longer use the commonjs syntax require('inquirer').**
 
-You can also open the project in VS Code and make sure you are in the directory of this application and then type the command below on your terminal:
+You can also open the project in VS Code, make sure you are in the directory of this application and then type the command below on your terminal:
 
 ```bash
 npm i
