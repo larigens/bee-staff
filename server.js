@@ -1,7 +1,7 @@
 // Packages / Dependencies.
-const express = require('express');
-const { init } = require('./lib/prompt');
-const { database } = require('./config/connection.js');
+const express = require("express");
+const { init } = require("./lib/prompt");
+const { database } = require("./config/connection.js");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,17 +12,25 @@ app.use(express.json()); // Recognizes the incoming Request Object as a JSON Obj
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
-    res.status(404).end();
+  res.status(404).end();
 });
 
 // Connects the database
-database.connect(err => {
-    err ? console.error(err) : console.log('\n ------------ 🐝🍯 Welcome to Bee Staff! 🐝🍯 ------------ \n')
-    // Initialize Inquirer.
-    init();
+database.connect((err) => {
+  err
+    ? console.error(err)
+    : console.log(`\n
+    ******🐝***********🐝***********🐝******\n
+    *               🐝 🍯                  *\n
+    🍯       Welcome to Bee Staff!        🍯\n
+    *               🐝 🍯                  *\n
+    ******🐝***********🐝***********🐝******\n`);
+
+  // Initialize Inquirer.
+  init();
 });
 
 // Listens the PORT and starts node.
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT} 🐝`);
+  console.log(`Server running on port ${PORT} 🐝`);
 });

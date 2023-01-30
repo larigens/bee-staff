@@ -29,6 +29,7 @@ Bee Staff is a content management system (CMS) that can help you organize and pl
 ## Table of Contents
 
 - [Description](#description)
+- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Cloning the Repository](#cloning-the-repository)
   - [Prerequisites](#prerequisites)
@@ -143,6 +144,7 @@ Once the application is launched, the main menu will appear so that the user can
 | **Delete a department**                            | Prompted to select a Department they want to remove from the database                               | Delete  |
 | **Delete a role**                                  | Prompted to select a Role they want to remove from the database                                     | Delete  |
 | **Delete an employee**                             | Prompted to select an Employee they want to remove from the database                                | Delete  |
+| **Exit**                                           | Exits the application and disconnects from the database                                             | Ends    |
 
 The app will receive the request, process the response, demonstrate the resolution for 1 second, and then display the main menu again.
 
