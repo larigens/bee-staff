@@ -29,7 +29,6 @@ Bee Staff is a content management system (CMS) that can help you organize and pl
 ## Table of Contents
 
 - [Description](#description)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Cloning the Repository](#cloning-the-repository)
   - [Prerequisites](#prerequisites)
