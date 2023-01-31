@@ -1,7 +1,7 @@
 <h1 align="center"> Bee Staff </h1>
 
 <p align="center">
-    <img src="./assets/images/logo.png" alt="logo" width="125px" height="125px" />
+    <img src="./assets/images/logo.png" alt="logo" width="140px" height="140px" />
   <br><br>
   <i> Employee Tracker
     <br> built using Node.js and MySQL</i>
@@ -29,7 +29,6 @@ Bee Staff is a content management system (CMS) that can help you organize and pl
 ## Table of Contents
 
 - [Description](#description)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Cloning the Repository](#cloning-the-repository)
   - [Prerequisites](#prerequisites)
